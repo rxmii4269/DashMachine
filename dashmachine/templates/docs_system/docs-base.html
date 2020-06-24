@@ -1,0 +1,25 @@
+{% extends "main/layout.html" %}
+
+{% block page_vendor_css %}
+{% endblock page_vendor_css %}
+
+{% block page_lvl_css %}
+        {{ process_css_sources(src="docs_system/docs-base.css")|safe }}
+{% endblock page_lvl_css %}
+
+{% block content %}
+    {% block navbar %}{% endblock navbar %}
+
+    <div id="main" class="main-full {% block main_class %}{% endblock main_class %}">
+        <div id="md-container">
+            {% block md_content %}{% endblock md_content %}
+        </div>
+    </div>
+{% endblock content %}
+
+{% block page_vendor_js %}
+{% endblock page_vendor_js %}
+
+{% block page_lvl_js %}
+        {{ process_js_sources(src="docs_system/docs-base.js")|safe }}
+{% endblock page_lvl_js %}
